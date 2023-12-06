@@ -161,9 +161,10 @@ int Evil_PD::game(bool ptf){
 			}
 
 		}
-		if(ptf)
-			fclose(file);
+
 	}
+	if(ptf)
+		fclose(file);
 
 	return 0;
 }
