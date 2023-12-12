@@ -11,7 +11,7 @@
 
 
 #define K 1.2
-#define L 200
+#define L 400
 #define LL (L*L)
 #define ITER 20001
 #define GAP 100
