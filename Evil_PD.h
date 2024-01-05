@@ -37,7 +37,7 @@ public:
 	int **Neighbour;
 
 	Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool prep,const bool Grid = false);
+	const bool prep = false,const bool Grid = false);
 	~Evil_PD();
 	//double unit_game(const int cent,const int target);
 	double centre_game(const int cent);
