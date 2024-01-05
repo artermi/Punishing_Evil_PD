@@ -33,7 +33,7 @@ Evil_PD::Evil_PD(const double t, const double w, const double G, const double u,
 				if(i % L <  row_leng )
 					Strategy[i] = 0;
 				else
-					Strategy[i] = (i % L > L - row_leng) ? 2: 1;
+					Strategy[i] = (i % L > L - row_leng) ? 1: 2;
 			}
 			else{
 				Strategy[i] = 2;
