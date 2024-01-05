@@ -2,7 +2,7 @@
 using namespace std;
 
 Evil_PD::Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool Grid){
+	const bool prep,const bool Grid){
 
 	T = t;
 	W = w;
@@ -21,10 +21,32 @@ Evil_PD::Evil_PD(const double t, const double w, const double G, const double u,
 	for(int i = 0; i < 3; i++)
 		Cate_Player[i] = 0;
 
-	for(int i = 0; i < LL; i++){
-		Strategy[i] = rand() % 3;
+	if(prep){
+		for (int i = 0; i < LL; ++i){
+			if (i / L < int (L * (2.0/3.0 - 1.0/(4.0 * sqrt(3) )) ) ){
+				Strategy[i] = (i % L < L/2) ? 0: 1;
+			}
+			else if (i / L < int ( L * (2.0/3.0 + 1.0/(4.0 * sqrt(3))))){
+				double horiz = L * (2.0/3.0 + 1.0/(4.0 * sqrt(3)));
+				int row_leng =  int ( ( horiz - (double (i)) / L) * sqrt(3) );
+				//printf("%d %d\n", int(horiz), row_leng);
+				if(i % L <  row_leng )
+					Strategy[i] = 0;
+				else
+					Strategy[i] = (i % L > L - row_leng) ? 2: 1;
+			}
+			else{
+				Strategy[i] = 2;
+			}
+			Cate_Player[Strategy[i]] ++;
+		}
+	}
+	else{
+		for(int i = 0; i < LL; i++){
+			Strategy[i] = rand() % 3;
 
-		Cate_Player[Strategy[i]] ++;
+			Cate_Player[Strategy[i]] ++;
+		}
 	}
 
 

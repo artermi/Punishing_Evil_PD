@@ -11,7 +11,7 @@
 
 
 #define K 1.2
-#define L 600
+#define L 1000
 #define LL (L*L)
 #define ITER 30001
 #define GAP 100
@@ -37,7 +37,7 @@ public:
 	int **Neighbour;
 
 	Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool Grid = false);
+	const bool prep,const bool Grid = false);
 	~Evil_PD();
 	//double unit_game(const int cent,const int target);
 	double centre_game(const int cent);
