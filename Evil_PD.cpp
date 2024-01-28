@@ -2,13 +2,14 @@
 using namespace std;
 
 Evil_PD::Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool prep,const bool Grid){
+	const bool prep,const bool Grid, const double pp){
 
 	T = t;
 	W = w;
 	g = G;
 	U = u;
 	S = s;
+	prob_rand = pp;
 
 	grid = Grid;
 
@@ -170,7 +171,7 @@ int Evil_PD::game(bool ptf){
 			int x = rand() % LL;
 
 			int y = Neighbour[x][rand() % 4];
-			int a_rand = rand() % 10000000;
+			int a_rand = rand() % prob_rand;
 			if (a_rand == 0){
 				int rand_stg = rand() % 3;
 				Cate_Player[ Strategy[y] ] --;

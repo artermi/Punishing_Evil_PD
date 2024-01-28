@@ -25,6 +25,7 @@ public:
 	double g;
 	double U;
 	double S;
+	double prob_rand;
 
 	bool grid;
 
@@ -37,7 +38,7 @@ public:
 	int **Neighbour;
 
 	Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool prep = false,const bool Grid = false);
+	const bool prep = false,const bool Grid = false, const double pp = (double)RAND_MAX);
 	~Evil_PD();
 	//double unit_game(const int cent,const int target);
 	double centre_game(const int cent);
