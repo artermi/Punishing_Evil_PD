@@ -13,8 +13,8 @@
 #define K 1.2
 #define L 1000
 #define LL (L*L)
-#define ITER 50001
-#define GAP 100
+#define ITER 301
+#define GAP 10
 #define PERT 0.02
 
 class Evil_PD{

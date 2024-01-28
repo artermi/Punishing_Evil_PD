@@ -35,7 +35,7 @@ int main(int argc, char** argv){
 	srand(time(NULL));
 
 
-	double T = 1.2;
+	double T = 1.6;
 	double W = 0.3;
 	double g = 0.5;
 	double U = 0.2;
