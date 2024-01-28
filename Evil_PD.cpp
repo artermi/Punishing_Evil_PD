@@ -170,7 +170,7 @@ int Evil_PD::game(bool ptf){
 			int x = rand() % LL;
 
 			int y = Neighbour[x][rand() % 4];
-			int a_rand = rand() % 100;
+			int a_rand = rand() % 10000000;
 			if (a_rand == 0){
 				int rand_stg = rand() % 3;
 				Cate_Player[ Strategy[y] ] --;
