@@ -24,7 +24,7 @@ int do_once(double T, double W, double g, double U, double S){
 	file = fopen(file_n, "w");
 	fclose(file);
 
-	Evil_PD gameOBJ(T,W,g,U,S);
+	Evil_PD gameOBJ(T,W,g,U,S,false,false,1000000);
 	gameOBJ.game(true);
 
 	return 0;

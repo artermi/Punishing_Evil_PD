@@ -2,7 +2,7 @@
 using namespace std;
 
 Evil_PD::Evil_PD(const double t, const double w, const double G, const double u,const double s,
-	const bool prep,const bool Grid, const double pp){
+	const bool prep,const bool Grid, const int pp){
 
 	T = t;
 	W = w;

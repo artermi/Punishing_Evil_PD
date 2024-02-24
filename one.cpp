@@ -2,7 +2,7 @@
 #include <unistd.h>
 using namespace std;
 
-int do_once(double T, double W, double g, double U, double S){
+int do_once(double T, double W, double g, double U, double S, double pp){
 	printf("Now doing Evil_PD with (T,W,g,U,s) = (%f,%f,%f,%f,%f)\n",
 		T,W,g,U,S);
 	char file_n[100];
@@ -24,7 +24,7 @@ int do_once(double T, double W, double g, double U, double S){
 	file = fopen(file_n, "w");
 	fclose(file);
 
-	Evil_PD gameOBJ(T,W,g,U,S,true,true);
+	Evil_PD gameOBJ(T,W,g,U,S,true,false,pp);
 	gameOBJ.game(true);
 
 	return 0;
@@ -40,7 +40,7 @@ int main(int argc, char** argv){
 	double g = 0.5;
 	double U = 0.2;
 	double s = -0.1;
-	do_once(T,W,g,U,s);
+	do_once(T,W,g,U,s,10000000);
 	
 
 
