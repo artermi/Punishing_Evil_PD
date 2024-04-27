@@ -25,7 +25,7 @@ int do_once(double T, double W, double g, double U, double S){
 	fclose(file);
 
 	Evil_PD gameOBJ(T,W,g,U,S,false,false,1000000);
-	gameOBJ.game(true);
+	gameOBJ.game(true,true);
 
 	return 0;
 }
