@@ -85,8 +85,35 @@ double Evil_PD::centre_game(const int cent){
 	return profit;
 }
 
+int Evil_PD::game(bool ptf, bool avg){
+	game2(ptf);
+	if(avg){
+		calc_avg();
+	}
+	return 0;
+}
+int Evil_PD::calc_avg(){
+	double sum_all = 0;
+	for(int i = 0; i < LL; i++)
+		sum_all += centre_game(i);
 
-int Evil_PD::game(bool ptf){
+	printf("%f\n", sum_all/ (double) LL);
+
+	FILE *file;
+	char path[100];
+	sprintf(path,"T_%04d_W_%04d_G_%04d_U_%04d_S_%04d_avg.dat", 
+		(int)((T + 0.000001) * 100),
+		(int)((W + 0.000001) * 100), (int)((g + 0.000001) * 100),
+		(int)((U + 0.000001) * 100), (int)((-S + 0.000001) * 100));
+	printf("Now file:%s\n",path);
+	file = fopen(path,"a+");
+	fprintf(file, "%f",sum_all/ (double) LL);
+	fclose(file);
+
+	return 0;
+};
+
+int Evil_PD::game2(bool ptf){
 	char path[100];
 	FILE *file;
 
