@@ -37,7 +37,7 @@ int main(int argc, char** argv){
 
 	for(double T = 1.0; T < 2.01; T += 0.1 ){
 		for(double W = 0; W < 1.01; W += 0.1){
-			for (double g = 0; g < 1.01; g += 0.1){
+			for (double g = 0.4; g < .91; g += 0.1){
 				for(double U = 0; U < 1.01; U += 0.1){
 					do_once(T,W,g,U,-0.1);
 				}

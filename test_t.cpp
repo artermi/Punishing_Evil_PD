@@ -24,7 +24,7 @@ int do_once(double T, double W, double g, double U, double S){
 	file = fopen(file_n, "w");
 	fclose(file);
 
-	Evil_PD gameOBJ(T,W,g,U,S,true,false);
+	Evil_PD gameOBJ(T,W,g,U,S,false,false,1000000);
 	gameOBJ.game(true);
 
 	return 0;
@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 
 
 	for(double T = 1.0; T < 2.01; T += 0.02 ){
-					do_once(T,0.3,0.6,1.0,-0.1);
+					do_once(T,0.5,0.6,1.0,-0.1);
 	}
 
 
